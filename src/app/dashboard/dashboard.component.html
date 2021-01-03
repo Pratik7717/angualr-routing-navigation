@@ -1,3 +1,45 @@
-<p>dashboard works!</p>
+<!-- <p>dashboard works!</p> -->
 
-<button class="btn btn-dark" type="button" (click)="logout()">Logout</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h2 class="navbar-brand" href="#">LinkCode Technologies</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-success" aria-current="page" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div style="height: 5vh;"></div>
+
+<div class="container">
+  <!-- <button class="btn btn-dark" type="button" (click)="logout()">Logout</button> -->
+  <table class="table table-hover table-dark table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <td>{{i}}</td>
+        <td>{{user}}</td>
+        <td>{{user}}</td>
+        <td>{{user}}</td>
+      </tr>
+  </table>
+
+
+
+</div>
+
+
