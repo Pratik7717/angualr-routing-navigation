@@ -2,14 +2,14 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h2 class="navbar-brand" href="#">LinkCode Technologies</h2>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand">LinkCode Technologies</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-success" aria-current="page" (click)="logout()">Logout</a>
+          <a class="nav-link btn btn-danger btn-outline-white" (click)="logout()">Logout</a>
         </li>
       </ul>
     </div>
@@ -19,22 +19,34 @@
 <div style="height: 5vh;"></div>
 
 <div class="container">
+  <div class="row justify-content-center align-items-center">
+    <h5 *ngIf="isLoading">Loading...</h5>
+  </div>
   <!-- <button class="btn btn-dark" type="button" (click)="logout()">Logout</button> -->
-  <table class="table table-hover table-dark table-bordered">
+  <div *ngIf="!isLoading">
+    <button class="btn btn-primary" type="button">Add New Employee</button>
+    <br>
+    <br>
+  </div>
+  <table class="table table-hover table-dark table-bordered" *ngIf="!isLoading">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Email</th>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users; index as i">
-        <td>{{i}}</td>
-        <td>{{user}}</td>
-        <td>{{user}}</td>
-        <td>{{user}}</td>
+      <tr *ngFor="let employee of employees;index as i">
+        <td>{{i+1}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td><button class="btn btn-warning" type="button">Edit</button></td>
+        <td><button class="btn btn-danger" type="button">Delete</button></td>
       </tr>
   </table>
 

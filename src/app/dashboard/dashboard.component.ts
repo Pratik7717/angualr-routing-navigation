@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { employees } from '../employee'
+import { employee } from '../EmployeeInterface';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,9 @@ import { AuthService } from '../auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  users:Array<object>=[];
+  //users=[];
+  isLoading=false;
+  employees:employee[]=[];
   constructor(private router:Router, private authService: AuthService,private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -27,15 +31,24 @@ export class DashboardComponent implements OnInit {
   }
 
   getdata():void{
-    this.http.get('https://reqres.in/api/users?page=2').subscribe((res:any)=>{
-      console.log('res',res);
-      this.users=res.data;
-      console.log('users',this.users)
-    },(err:any)=>{
-      console.log('err',err);
-    });
+  //   this.http.get('https://reqres.in/api/users?page=2').subscribe((res:any)=>{
+  //     console.log('res',res);
+  //     this.users=res.data;
+  //     console.log('users',this.users)
+  //   },(err:any)=>{
+  //     console.log('err',err);
+  //   });
+    this.isLoading=true;
+    setTimeout(() => {
+      this.isLoading=false;
+      this.employees=employees;
+    }, 1000);
+    console.log(this.employees)
+    console.log('isLoading:', this.isLoading)
 
-  }
+
+
+   }
 
 
 

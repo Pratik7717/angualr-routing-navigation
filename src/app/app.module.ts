@@ -8,12 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,
