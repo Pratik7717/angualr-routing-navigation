@@ -24,7 +24,7 @@
   </div>
   <!-- <button class="btn btn-dark" type="button" (click)="logout()">Logout</button> -->
   <div *ngIf="!isLoading">
-    <button class="btn btn-primary" type="button">Add New Employee</button>
+    <button class="btn btn-primary" type="button" [routerLink]="['/add-employee']">Add New Employee</button>
     <br>
     <br>
   </div>
@@ -45,7 +45,7 @@
         <td>{{employee.email}}</td>
         <td>{{employee.firstName}}</td>
         <td>{{employee.lastName}}</td>
-        <td><button class="btn btn-warning" type="button" [routerLink]="['/edit-employee/' + i]">Edit</button></td>
+        <td><button class="btn btn-warning" type="button" [routerLink]="['/edit-employee/' + i]">Update</button></td>
         <td><button class="btn btn-danger" type="button" (click)="delete(i)">Delete</button></td>
       </tr>
   </table>

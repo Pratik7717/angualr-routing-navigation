@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { employees } from '../employee';
 
 @Component({
@@ -13,9 +14,13 @@ export class EditEmployeeComponent implements OnInit {
   lastName:string=""
   index=0;
 
-  constructor(private router:Router,private active:ActivatedRoute) { }
+  constructor(private router:Router,private active:ActivatedRoute, private authService:AuthService) { }
 
   ngOnInit(): void {
+    if(!this.authService.isLoggedIn())
+    {
+      this.router.navigate(['/']);
+    }
     this.index=this.active.snapshot.params.id;
     console.log('employees[this.index].email',employees[this.index].email);
     this.email=employees[this.index].email;
@@ -31,6 +36,8 @@ export class EditEmployeeComponent implements OnInit {
 
   }
 
-
+  cancle():void{
+    this.router.navigate(['/dashboard'])
+  }
 
 }
