@@ -43,13 +43,12 @@ export class DashboardComponent implements OnInit {
       this.isLoading=false;
       this.employees=employees;
     }, 1000);
-    console.log(this.employees)
-    console.log('isLoading:', this.isLoading)
-
-
 
    }
 
+   delete(index: number):void{
+     employees.splice(index,1);
+   }
 
 
 }

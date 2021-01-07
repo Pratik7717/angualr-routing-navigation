@@ -1,1 +1,26 @@
-<p>edit-employee works!</p>
+<!-- <p>edit-employee works!</p> -->
+
+<div class="container">
+  <div class="row rowmid justify-content-center align-items-center">
+
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 form-component-border">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" class="form-control" type="email" name="" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input id="firstName" class="form-control" type="text" name="" [(ngModel)]="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">LastName</label>
+        <input id="lastName" class="form-control" type="text" name="" [(ngModel)]="lastName">
+      </div>
+      <button class="btn btn-warning" type="button" (click)="update()">Update</button>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+</div>

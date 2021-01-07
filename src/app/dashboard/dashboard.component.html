@@ -45,8 +45,8 @@
         <td>{{employee.email}}</td>
         <td>{{employee.firstName}}</td>
         <td>{{employee.lastName}}</td>
-        <td><button class="btn btn-warning" type="button">Edit</button></td>
-        <td><button class="btn btn-danger" type="button">Delete</button></td>
+        <td><button class="btn btn-warning" type="button" [routerLink]="['/edit-employee/' + i]">Edit</button></td>
+        <td><button class="btn btn-danger" type="button" (click)="delete(i)">Delete</button></td>
       </tr>
   </table>
 
