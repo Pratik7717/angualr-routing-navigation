@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
     setTimeout(() => {
       this.isLoading=false;
       this.employees=employees;
-    }, 1000);
+    }, 3000);
 
    }
 

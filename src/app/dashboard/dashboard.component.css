@@ -1,3 +1,7 @@
-.rowmid{
-  height: 100vh;
+@media(min-width:768px)
+{
+  .rowmid{
+    height: 80vh;
+  }
+
 }

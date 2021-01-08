@@ -19,14 +19,33 @@
 <div style="height: 5vh;"></div>
 
 <div class="container">
-  <div class="row justify-content-center align-items-center">
-    <h5 *ngIf="isLoading">Loading...</h5>
+  <div class="row rowmid justify-content-center align-items-center" *ngIf="isLoading">
+    <!-- <h3>Loading...</h3> -->
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   </div>
   <!-- <button class="btn btn-dark" type="button" (click)="logout()">Logout</button> -->
   <div *ngIf="!isLoading">
-    <button class="btn btn-primary" type="button" [routerLink]="['/add-employee']">Add New Employee</button>
-    <br>
-    <br>
+    <button class="btn btn-primary mb-4" type="button" [routerLink]="['/add-employee']">Add New Employee</button>
   </div>
   <table class="table table-hover table-dark table-bordered" *ngIf="!isLoading">
     <thead>
