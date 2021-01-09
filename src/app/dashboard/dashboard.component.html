@@ -43,11 +43,26 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
+  <div *ngIf="employees.length==0 && !isLoading">
+    <div class="row">
+      <div class="col-md-8 text-center">
+        <img src="assets/ClipartKey_963596.png" alt="Not found image" width="400">
+      </div>
+      <div class="col-md-2">
+        <div class="row sidetext align-items-center">
+          <h1 class="text-left" style="font-weight: 900;">Nothing To Show.</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <br><br>
+  </div>
+
   <!-- <button class="btn btn-dark" type="button" (click)="logout()">Logout</button> -->
   <div *ngIf="!isLoading">
-    <button class="btn btn-primary mb-4" type="button" [routerLink]="['/add-employee']">Add New Employee</button>
+    <button class="btn btn-primary btn-block mb-4" type="button" [routerLink]="['/add-employee']">Add New Employee</button>
   </div>
-  <table class="table table-hover table-dark table-bordered" *ngIf="!isLoading">
+  <table class="table table-hover table-dark table-bordered" *ngIf="!isLoading && employees.length!=0">
     <thead>
       <tr>
         <th scope="col">#</th>
