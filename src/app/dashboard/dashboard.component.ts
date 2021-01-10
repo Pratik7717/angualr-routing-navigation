@@ -59,6 +59,12 @@ export class DashboardComponent implements OnInit {
       text: 'You will be logged out of the system',
       showCancelButton: true,
       confirmButtonText: `logout`,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
     }).then((result) => {
       if(result.value){
         this.logout();
