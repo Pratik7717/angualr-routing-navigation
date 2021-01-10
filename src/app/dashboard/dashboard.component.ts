@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { employees } from '../employee'
 import { employee } from '../EmployeeInterface';
+import  Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
     if(!this.authService.isLoggedIn())
       this.router.navigate(['/login']);
     this.getdata();
+    //Swal.fire('Hello World');to check if sweetalertbox is working or not.
   }
 
   logout():void{
@@ -49,6 +51,23 @@ export class DashboardComponent implements OnInit {
    delete(index: number):void{
      employees.splice(index,1);
    }
+
+   logoutAlert():void{
+    Swal.fire({
+      icon: 'warning',
+      title: 'Are You Sure?',
+      text: 'You will be logged out of the system',
+      showCancelButton: true,
+      confirmButtonText: `logout`,
+    }).then((result) => {
+      if(result.value){
+        this.logout();
+      }
+    })
+   }
+
+
+
 
 
 }
